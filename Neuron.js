@@ -32,7 +32,7 @@ function Neuron(options) {
 }
 
 Neuron.prototype.scale = function(x) {
-  return x / this.scale;
+  return x / this.scaleVal;
 }
 
 Neuron.prototype.addInput = function(_neuron, weight) {
@@ -62,6 +62,7 @@ Neuron.prototype.getOutput = function() {
 
 Neuron.prototype.setOutput = function(val) {
   this.output = val;
+  this.isStale = false;
 }
 
 Neuron.prototype.resetOutput = function(val) {
